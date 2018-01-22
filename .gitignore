@@ -1,0 +1,10 @@
+#unity gitignore start
+Library/
+ProjectSettings/
+Temp/
+#Auto generated VS/MD solution and project files
+
+*.csproj
+*.unityproj
+*.sln
+#Unity gitignore end
