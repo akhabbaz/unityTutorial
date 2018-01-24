@@ -10,6 +10,7 @@ public class Asteroid : MonoBehaviour {
         pointValue = 10;
     }// Use this for initialization
     public GameObject deathExplosion;
+    public AudioClip deathKnell;
     public void Die()
     {
         //Debug.Log ("OH NO I AM DYING");      
@@ -17,16 +18,14 @@ public class Asteroid : MonoBehaviour {
          * convention of Z being upwards, and XY being the horizontal                  
          * plane. as a result, since we are looking down the Y axis, we                              
          * rotate the particle system so that it flys in the right way.   */
-        Instantiate(deathExplosion, gameObject.transform.position, 
-            Quaternion.AngleAxis(-90, Vector3.right) );
+        AudioSource.PlayClipAtPoint(deathKnell, gameObject.transform.position);
+        Instantiate(deathExplosion, gameObject.transform.position, Quaternion.AngleAxis(-90, Vector3.right));
         GameObject obj = GameObject.Find("GlobalObject");
         Global g = obj.GetComponent<Global>();
         g.score += pointValue;
-
-        // Destroy removes the gameObject from the scene and
-        // marks it for garbage collection
         Destroy(gameObject);
     }
+    
     // Update is called once per frame
     void Update () {
 		

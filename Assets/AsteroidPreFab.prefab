@@ -126,3 +126,4 @@ MonoBehaviour:
   pointValue: 0
   deathExplosion: {fileID: 1661152258597458, guid: 1e0e2055be0ddf84b89d2a90fddcc731,
     type: 2}
+  deathKnell: {fileID: 8300000, guid: f41d2ee6fd42f2446a7f97147ce56e13, type: 3}
